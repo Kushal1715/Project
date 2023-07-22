@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/loginbg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* navbar  */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    z-index: 999;
+}
+
+.logo{
+    font-size: 2em;
+    color: white;
+}
+
+.navbar a{
+    position: relative;
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    height: 50px;
+    width: 130px;
+}
+
+.navbar a:hover{
+    /* border: 2px solid black; */
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.navbar .loginBtn{
+    height: 50px;
+    width: 130px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 35px;
+    text-align: center;
+}
+
+.navbar .loginBtn a{
+    margin-right: 29px;
+}
+
+.navbar .loginBtn:hover{
+    background-color: white;
+    color: black;
+}
+
+.navbar .cartIcon{
+    margin-left: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar .cartIcon:hover{
+    background-color: rgb(60, 58, 58);
+    padding: 5px;
+}
+
+
+/* search button  */
+
+.search{
+    height: 40px;
+    width: 240px;
+    background-color: white;
+    display: flex;
+    border-radius: 5px;
+}
+
+.search input{
+    height: 100%;
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+}
+
+.search a{
+    height: 100%;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    border: 1px solid #cccc;
+    border-left-color: black;
+}
+
+.search a:hover{
+    background-color: rgb(194, 192, 192);
+}
+
+.search a i{
+    color: black;
+    font-size: 18px;
+}
+
+/* login form  */
+
+.box{
+    position: absolute;
+    top: 15%;
+    height: 600px;
+    width: 400px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .loginForm{
+    width: 100%;
+    padding: 40px;
+}
+
+.loginForm h2{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.inputBox label{
+    position: absolute;
+    top: 0;
+    left: 6%;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.inputBox input{
+    height: 70%;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.inputBox .icon{
+    color:rgb(192, 190, 190);
+}
+
+.rememberMe{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rememberMe input{
+    margin-right: 5px;
+}
+
+.rememberMe a{
+    color: white;
+    text-decoration: none;
+}
+
+.rememberMe a:hover{
+    text-decoration: underline;
+}
+
+.loginBtn{
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.registerAccount{
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+    font-size: 0.9em;
+}
+
+.registerAccount a{
+    color: white;
+}
+
+.registerAccount a:hover{
+    color: rgb(187, 182, 182);
+}
