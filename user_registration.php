@@ -39,7 +39,7 @@
                     <label>Username</label>
                 </div>
                 <div class="inputBox">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
                     <input type="email" required>
                     <label>Email</label>
                 </div>
