@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(images/loginbg.jpg) no-repeat;
+    background: url(images/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -35,6 +35,10 @@ header{
 .logo{
     font-size: 2em;
     color: white;
+}
+
+.logo span{
+    color: #ff5400;
 }
 
 .navbar a{

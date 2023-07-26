@@ -9,13 +9,13 @@
 </head>
 <body>
     <header>
-        <h2 class="logo">CStore</h2>
+        <h2 class="logo"><span>digital</span>Bazar</h2>
         <nav class="navbar">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Products</a>
             <a href="#">Contact</a>
-            <button class="loginBtn"><a href="user_login.php">Login</a></button>
+            <button class="loginBtn">Login</button>
             <label class="cartIcon"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></label>
         </nav>            
         <div class="search">
@@ -63,6 +63,6 @@
             </form>
         </div>
     </div>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>
