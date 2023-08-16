@@ -296,12 +296,12 @@ header .nav{
     width: 23%;
     min-width: 250px;
     padding: 10px 12px;
-    border: 1px solid #828282;
+    border: 1px solid #626161;
     border-radius: 25px;
     box-shadow: 20px 20px 30px rgba(0,0,0,0.01);
     margin: 15px 0;
     position: relative;
-    background-color: #db7a7a;
+    background-color: #ffffff;
 }
 
 .product .pro:hover{
@@ -351,4 +351,151 @@ header .nav{
     bottom: 20px;
     right: 10px;
     cursor: pointer;
-} 
+}
+
+
+/* ---------banner----------  */
+
+.banner{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+}
+
+.banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    background: url(img/banner/b16.jpg);
+    min-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+.banner .banner-box2{
+    background: url(img/banner/b17.jpg);
+}
+
+.banner h4{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.banner h2{
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.banner span{
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+.banner .bannerBtn{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid white;
+    outline: none;
+    transition: 0.2s;
+}
+
+
+.banner .bannerBtn:hover{
+    background: #088178;
+    border: 1px solid #088178;
+}
+
+.banner .bannerBtn2:hover{
+    background: rgb(72, 129, 234);
+    border: 1px solid rgb(72, 129, 234);
+}
+
+/* ......................  */
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer h2 .bazar{
+    color: rgb(0, 255, 219);
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow{
+    margin-top: 20px;
+}
+
+footer .follow i{
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img{
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+
+footer .install img{
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer .a:hover{
+    color: #088178;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+
+
+@media (max-width: 566px){
+    .banner .banner-box{
+        align-items: center;
+    }
+
+}
+
