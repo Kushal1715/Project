@@ -49,15 +49,10 @@ p{
 /* navbar  */
 
 header{
-    min-height: 100vh;
-    background: url(img/bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-color: rgb(178, 8, 0);
     flex-direction: column;
     display: flex;
     align-items: center;
-    /* padding: 20px 100px; */
-    z-index: 999;
 }
 
 header .nav{
@@ -72,21 +67,13 @@ header .nav{
     padding: 15px 100px;
 }
 
-
-
-.scroll{
-   
-    background-color: rgb(178, 8, 0);
-}
-
-
 .logo{
     font-size: 2em;
     color: white;
 }
 
 .logo span{
-    color: #ff5400;
+    color: rgb(0, 255, 219);
 }
 
 .navbar a{
@@ -140,8 +127,10 @@ header .nav{
 
 .navbar .cartIcon:hover{
     background-color: rgb(60, 58, 58);
-    padding: 5px;
+    padding: 2px;
 }
+
+
 
 
 /* search button  */
@@ -177,10 +166,6 @@ header .nav{
     border-left-color: black;
 }
 
-.search a:hover{
-    background-color: rgb(194, 192, 192);
-}
-
 .search a i{
     color: black;
     font-size: 18px;
@@ -189,7 +174,10 @@ header .nav{
 /* ........  */
 
 .offer{
-    height: 600px;
+    background-image: url(img/bg.jpg);
+    width: 100%;
+    background-size: cover;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -302,6 +290,7 @@ header .nav{
     margin: 15px 0;
     position: relative;
     background-color: #ffffff;
+    
 }
 
 .product .pro:hover{
@@ -425,6 +414,7 @@ header .nav{
 /* ......................  */
 
 footer{
+    border-top: 2px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -498,4 +488,55 @@ footer .copyright{
     }
 
 }
+
+/* .................Product Details.................  */
+
+.productDetails{
+    display: flex;
+    margin-top: 20px;
+}
+
+.productDetails .image{
+    width: 40%;
+    margin-right: 50px;
+}
+
+.productDetails .details{
+    width: 50%;
+    padding-top: 30px;
+}
+
+.productDetails .details h4{
+    padding: 40px 0 20px 0;
+}
+
+.productDetails .details h2{
+    font-size: 26px;
+}
+
+.productDetails .details input{
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.productDetails .details input:focus{
+    outline: none;
+}
+
+.productDetails .details button{
+    border: 1px solid #088178;
+    padding: 10px 15px;
+    border-radius: 3px;
+    background: #088178;
+    color: white;
+    cursor: pointer;
+}
+
+.productDetails .details span{
+    line-height: 25px;
+}
+
 
