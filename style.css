@@ -50,15 +50,11 @@ p{
 
 header{
     background-color: rgb(178, 8, 0);
-    flex-direction: column;
     display: flex;
     align-items: center;
 }
 
 header .nav{
-    position: sticky;
-    top: 0;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -411,7 +407,7 @@ header .nav{
     border: 1px solid rgb(72, 129, 234);
 }
 
-/* ......................  */
+/* ..........footer............  */
 
 footer{
     border-top: 2px solid black;
@@ -538,5 +534,176 @@ footer .copyright{
 .productDetails .details span{
     line-height: 25px;
 }
+
+
+
+/* ............about.............  */
+
+.page-header{
+    background: url(img/banner/b3.jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+}
+
+.page-header h2,
+.page-header p{
+    color: white;
+}
+
+.aboutUs{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+}
+
+.aboutUs img{
+    width: 47%;
+    height: auto;
+}
+
+.aboutUs div{
+
+    width: 48%;
+    padding-left: 40px;
+}
+
+@media (max-width: 890px){
+    .aboutUs{
+        flex-direction: column;
+    }
+
+    .aboutUs img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .aboutUs div{
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+
+/* ................contact.................  */
+
+.contact{
+    background: url(img/about/banner.png);
+    background-size: cover;
+}
+
+.formDetails{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #e1e1e1;
+}
+
+.formDetails form{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formDetails form span{
+    font-size: 12px;
+}
+
+.formDetails form h2{
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0;
+}
+
+.formDetails form input,
+.formDetails form textarea{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+}
+
+.formDetails form button{
+    padding: 10px 15px;
+    background-color: #088178;
+    border: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.formDetails .people div{
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.formDetails .people div img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.formDetails .people div p{
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.formDetails .people div p span{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+@media (max-width:799px){
+    .formDetails{
+        padding: 40px;
+    }
+
+    .formDetails form{
+        width: 50%;
+    }
+
+    header .nav{
+        padding: 20px;
+    }
+
+    .search{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 477px){
+    .formDetails{
+        margin: 10px;
+        padding: 30px 10px;
+        flex-wrap: wrap;
+    }
+
+    .formDetails form{
+        width: 100%;
+    }
+
+    .formDetails .people div{
+        margin-top: 15px;
+    }
+
+    .formDetails .people div img{
+        width: 60px;
+        height: 60px;
+    }
+}
+
 
 
