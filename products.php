@@ -348,50 +348,50 @@
         }
 
         p2.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails2.php";
         }
         p3.onclick = function(){
-             window.location.href = "proDetails.php";
+             window.location.href = "proDetails3.php";
         }
 
         p4.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails4.php";
         }
         p5.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails5.php";
         }
         p6.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails6.php";
         }
         p7.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails7.php";
         }
         p8.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails8.php";
         }
         p9.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails9.php";
         }
         p10.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails10.php";
         }
         p11.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails11.php";
         }
         p12.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails12.php";
         }
         p13.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails13.php";
         }
         p14.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails14.php";
         }
         p15.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails15.php";
         }
         p16.onclick = function(){
-            window.location.href = "proDetails.php";
+            window.location.href = "proDetails16.php";
         }
 
     </script>
