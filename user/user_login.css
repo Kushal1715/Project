@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(images/bg.jpg) no-repeat;
+    background: url(../img/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -90,10 +90,7 @@ header{
     cursor: pointer;
 }
 
-.navbar .cartIcon:hover{
-    background-color: rgb(60, 58, 58);
-    padding: 5px;
-}
+
 
 
 /* search button  */

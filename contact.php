@@ -15,13 +15,13 @@
       <div class="nav">
         <h2 class="logo"><span class="span">digital</span>Bazar</h2>
         <nav class="navbar">
-          <a href="home.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="products.html">Products</a>
-          <a href="contact.html">Contact</a>
-          <button class="loginBtn">Login</button>
+          <a href="home.php">Home</a>
+          <a href="about.php">About</a>
+          <a href="products.php">Products</a>
+          <a href="contact.php">Contact</a>
+          <a href="user/user_login.php" class="loginBtn">Login</a>
           <label class="cartIcon"
-            ><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></label
+          ><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a></label
           >
         </nav>
         <div class="search">

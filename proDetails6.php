@@ -15,13 +15,13 @@
       <div class="nav">
         <h2 class="logo"><span class="span">digital</span>Bazar</h2>
         <nav class="navbar">
-          <a href="home.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="products.html">Products</a>
-          <a href="contact.html">Contact</a>
-          <button class="loginBtn">Login</button>
+          <a href="home.php">Home</a>
+          <a href="about.php">About</a>
+          <a href="products.php">Products</a>
+          <a href="contact.php">Contact</a>
+          <a href="user/user_login.php" class="loginBtn">Login</a>
           <label class="cartIcon"
-            ><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></label
+          ><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a></label
           >
         </nav>
         <div class="search">
@@ -33,17 +33,17 @@
 
     <section class="productDetails section-p1">
       <div class="image">
-        <img src="img/products/p1.jpg" width="100%" id="mainImg" />
+        <img src="img/products/p6.jpg" width="100%" id="mainImg" />
       </div>
 
       <div class="details">
-        <h6>Headphone</h6>
-        <h4>RK-1000X M4</h4>
-        <h2>Rs.2000</h2>
+        <h6 id="productName">Headphone</h6>
+        <h4 id="productDetails">RK-1000X M4</h4>
+        <h2 id="productPrice">Rs.2000</h2>
         <input type="number" value="1" />
         <button>Add To Cart</button>
         <h4>Product Description</h4>
-        <span
+        <span id="productDescription"
           >A pair of small loudspeaker drivers worn on or around the head over a
           user's ears. They are electroacoustic transducers, which convert an
           electrical signal to a corresponding sound. Headphones let a single
@@ -56,11 +56,11 @@
 
     <section class="product section-p1">
         <h2>Featured Products</h2>
-    <div class="pBox">
+         <div class="pBox">
         <div class="pro">
-            <img src="img/products/p13.jpg">
+            <img src="img/products/p13.jpg" id="p13">
             <div class="des">
-                <h5>S10 Music Bluetooth Speaker Red</h5>
+                <h5>1600W Iron</h5>
                 <div class="star">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -68,14 +68,14 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <h4>Rs.2000</h4>
+                <h4>Rs.1850</h4>
             </div>
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="pro">
-            <img src="img/products/p14.jpg">
+            <img src="img/products/p14.jpg" id="p14">
             <div class="des">
-                <h5>S10 Music Bluetooth Speaker Red</h5>
+                <h5>DPI Gaming Mouse</h5>
                 <div class="star">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -83,14 +83,14 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <h4>Rs.2000</h4>
+                <h4>Rs.1570</h4>
             </div>
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="pro">
-            <img src="img/products/p15.jpg">
+            <img src="img/products/p15.jpg" id="p15">
             <div class="des">
-                <h5>S10 Music Bluetooth Speaker Red</h5>
+                <h5>Solo Hacker USB-C</h5>
                 <div class="star">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -98,14 +98,14 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-                <h4>Rs.2000</h4>
+                <h4>Rs.750</h4>
             </div>
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="pro">
-            <img src="img/products/p16.jpg">
+            <img src="img/products/p16.jpg" id="p16">
             <div class="des">
-                <h5>S10 Music Bluetooth Speaker Red</h5>
+                <h5>IndoorCam C24 Webcam</h5>
                 <div class="star">
                     <i class="fa-solid fa-star star"></i>
                     <i class="fa-solid fa-star star"></i>
@@ -113,12 +113,12 @@
                     <i class="fa-solid fa-star star"></i>
                     <i class="fa-solid fa-star star"></i>
                 </div>
-                <h4>Rs.2000</h4>
+                <h4>Rs.9999</h4>
             </div>
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
     <footer class="section-p1">
       <div class="col">
@@ -165,6 +165,6 @@
         <p>© 2023, Rahul and Kushal - E-commerce Website</p>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="product.js"></script>
   </body>
 </html>
