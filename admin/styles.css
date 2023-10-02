@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+}
+
+li{
+    list-style: none;
+    color: white;
+}
+
+h1{
+    color: white;
+}
+
+.side-bar{
+    position: fixed;
+    background: #000000a8;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-bar .logo{
+    font-size: 1.5em;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
+}
+
+
+.logo span{
+    color: #ff5400;
+}
+
+.side-bar ul{
+    padding-top: 40px;
+}
+
+.side-bar ul li button a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
+.side-bar li{
+    font-size: 24px;
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.side-bar li button{
+    padding: 10px;
+}
+
+
+
+.container{
+    position: absolute;
+    right: 0;
+    width: 79vw;
+    height: 100vh;
+    left: 30vw;
+    top: 20vh;
+    
+}
+
+.container .header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 79vw;
+    height: 10vh;
+    background-color: rgb(136, 130, 130);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .header .nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.container .header .nav input{
+    height: 40px;
+}
+
+.container .header .nav button{
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+
+
+.container .user a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+    margin-right: 50px;
+    background-color: white;
+}
+
+.container .user a:hover{
+    background-color: rgb(198, 191, 191);
+}
+
+
+
+.form h1{
+    color: black;
+}
+
+.head{
+    padding-top: 26px;
+}
+
+.head h1{
+    color: red;
+}
+
+ 
+
+
+
