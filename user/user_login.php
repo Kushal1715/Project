@@ -1,3 +1,8 @@
+<?php
+include('../connect.php');
+include('../functions.php');
+@session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +20,6 @@
             <a href="../about.php">About</a>
             <a href="../products.php">Products</a>
             <a href="../contact.php">Contact</a>
-            <button class="loginBtn">Login</button>
-            <label class="cartIcon"><a href="../cart.php"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a></label>
         </nav>            
         <div class="search">
             <input type="text" placeholder="Search.." name="search">
@@ -27,28 +30,49 @@
     <div class="box">
         <div class="loginForm">
             <h2>Login</h2>
-            <form action="#">
+            <form action="" method="post">
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" required>
-                    <label>Username</label>
+                    <input type="text" required name="username" id="username" autocomplete="off">
+                    <label for="username">Username</label>
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required>
-                    <label>Password</label>
+                    <input type="password" required name="password" id="password">
+                    <label for="password">Password</label>
                 </div>
                 <div class="rememberMe">
-                    <label><input type="checkbox" required>Remember me</label>
+                    <label><input type="checkbox">Remember me</label>
                     <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="loginBtn">Login</button>
+                <button type="submit" class="loginBtn" name="user_login">Login</button>
                 <div class="registerAccount">
                     <p>Don't have an account?<a href="user_registration.php">Register</a></p>
                 </div>
             </form>
         </div>
     </div>
-    <!-- <script src="script.js"></script> -->
 </body>
 </html>
+
+<?php
+    if(isset($_POST['user_login'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $select_query = "select * from `user` where username= '$username' and user_password = '$password'";
+        $result = mysqli_query($conn,$select_query);
+        $row_count=mysqli_num_rows($result);
+        if($row_count>0){
+            echo "<script>alert('Login successfully')</script>";
+
+            $_SESSION['username'] = $username;
+            header ('location:../home.php');
+
+
+        }else{
+            echo "<script>alert('Invalid Credentials')</script>";
+        }
+    }
+?>
+

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,9 +14,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-  <?php
-    include "navbar.php";
-    ?>
+  <header class="navbar">
+        <div class="nav">
+            <h2 class="logo"><span class="span">digital</span>Bazar</h2>
+        <nav class="navbar">
+          <a href="home.php">Home</a>
+          <a href="about.php">About</a>
+          <a href="products.php">Products</a>
+          <a href="contact.php">Contact</a>
+          <?php
+          if(!isset($_SESSION['username'])){
+            echo "<a href='user/user_login.php' class='loginBtn'>Login</a>";
+          }else{
+            echo "<a href='user/user_logout.php' class='loginBtn'>Logout</a>";
+          }
+          ?>
+        </nav>            
+        <form class="search" action="search_product.php" method="get">
+            <input type="search" placeholder="Search.." name="search_data">
+            <input class="searc" type="submit" value="Search" name="search_data_product">
+        </form>
+        </div>
+    </header>
 
     <section class="page-header">
       <h2>About Us</h2>
@@ -25,14 +47,14 @@
       <div>
         <h2>Everything About Us</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore fugit
-          aliquid dolorem exercitationem dolor repudiandae nesciunt, expedita
-          temporibus beatae? Laborum blanditiis iste sunt magnam optio enim vel
-          quas corporis adipisci ipsa eveniet aliquam ex, recusandae, nesciunt
-          natus dignissimos at sapiente quod nisi iure minima reiciendis. Error
-          minima aliquam deserunt consequatur ipsam deleniti dolores iste nulla
-          debitis doloribus, voluptas eaque eveniet aperiam incidunt nostrum
-          reprehenderit consectetur porro assumenda commodi harum eius.
+        We are one of the most trusted online store in Nepal for all kinds of Electronic items. We offer wide range of
+        quality products for daily to day activities. We believe in making a hassle free shopping to the versatile
+        customers for all kinds of electronic componenets.
+        Offering quality products to the customers with the best price at your door step where ever and whenever you
+        need it.
+        We focus on availing easy and personalized service for our customers. Your order is processed in a minimal time
+        with atmost care. We will deliver your products to you carefully to make sure it reaches to you in the most
+        perfect way.
         </p>
       </div>
     </section>

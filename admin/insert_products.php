@@ -19,7 +19,7 @@ if (isset($_POST['insert_product'])) {
         move_uploaded_file($temp_image, "./product_images/$product_image");
 
         if($product_type == 1){
-            $sql = "INSERT INTO `products` (`product_title`, `product_description`, `product_keyword`, `product_image`, `product_price`, `date`, `status`) 
+            $sql = "INSERT INTO `product` (`product_title`, `product_description`, `product_keyword`, `product_image`, `product_price`, `date`, `status`) 
             VALUES ('$product_title', '$product_description', '$product_keyword', '$product_image', '$product_price', current_timestamp(), '$product_status')";
 
             $result = mysqli_query($conn, $sql);

@@ -1,5 +1,9 @@
+<?php
+include('../connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +11,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="user_registration.css">
 </head>
+
 <body>
     <header>
         <h2 class="logo"><span>digital</span>Bazar</h2>
         <nav class="navbar">
-        <a href="../home.php">Home</a>
+            <a href="../home.php">Home</a>
             <a href="../about.php">About</a>
             <a href="../products.php">Products</a>
             <a href="../contact.php">Contact</a>
-            <button class="loginBtn">Login</button>
-            <label class="cartIcon"><a href="../cart.php"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a></label>
 
-        </nav>            
+
+        </nav>
         <div class="search">
             <input type="text" placeholder="Search.." name="search">
             <a href="#" class="icon"><i class="fa fa-search"></i></a>
@@ -28,42 +32,71 @@
     <div class="box">
         <div class="loginForm">
             <h2>Registration</h2>
-            <form action="#">
-            <div class="inputBox">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" required>
-                    <label>Full Name</label>
-                </div>
+            <form action="" method="post">
+
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" required>
-                    <label>Username</label>
+                    <input type="text" required name="username" id="username" autocomplete="off">
+                    <label for="username">Username</label>
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <input type="email" required name="email" id="email" autocomplete="off">
+                    <label for="email">Email</label>
+                </div>
+                <div class="inputBox">
+                    <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                    <input type="number" required name="contact" id="contact" autocomplete="off">
+                    <label for="contact">Phone Number</label>
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required>
-                    <label>Password</label>
+                    <input type="password" required name="password" id="password">
+                    <label for="password">Password</label>
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required>
-                    <label>Confirm Password</label>
+                    <input type="password" required name="cpassword" id="cpassword">
+                    <label for="cpassword">Confirm Password</label>
                 </div>
                 <div class="rememberMe">
                     <label><input type="checkbox" required>I accept the <a href="#">terms and conditions</a></label>
                 </div>
-                <button type="submit" class="loginBtn">Register</button>
+                <button type="submit" class="loginBtn" name="user_register">Register</button>
                 <div class="registerAccount">
                     <p>Already have an account?<a href="user_login.php">Login</a></p>
                 </div>
             </form>
         </div>
     </div>
-    <!-- <script src="script.js"></script> -->
 </body>
+
 </html>
+<?php
+if (isset($_POST['user_register'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+
+    $select_query = "select * from `user` where username='$username' or user_email='$email'";
+    $result = mysqli_query($conn, $select_query);
+    $rows_count = mysqli_num_rows($result);
+    if ($rows_count > 0) {
+        echo "<script>alert('Username or email already exist')</script>";
+    }else if($password != $cpassword){
+        echo "<script>alert('Password do not match')</script>";
+    } else {
+        $insert_query = "insert into `user` (username,user_email,user_password,user_mobile) values ('$username','$email','$password','$contact')";
+        $result2 = mysqli_query($conn, $insert_query);
+        if ($result2) {
+            echo "<script>alert('Registration completed')</script>";
+        } else {
+            echo "<script>alert('Registration failed')</script>";
+        }
+    }
+
+
+}
+?>

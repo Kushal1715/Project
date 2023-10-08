@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,9 +16,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-  <?php
-    include "navbar.php";
-    ?>
+  <header class="navbar">
+        <div class="nav">
+            <h2 class="logo"><span class="span">digital</span>Bazar</h2>
+        <nav class="navbar">
+          <a href="home.php">Home</a>
+          <a href="about.php">About</a>
+          <a href="products.php">Products</a>
+          <a href="contact.php">Contact</a>
+          <?php
+          if(!isset($_SESSION['username'])){
+            echo "<a href='user/user_login.php' class='loginBtn'>Login</a>";
+          }else{
+            echo "<a href='user/user_logout.php' class='loginBtn' name='logout'>Logout</a>";
+          }
+          ?>
+        </nav>            
+        <form class="search" action="search_product.php" method="get">
+            <input type="search" placeholder="Search.." name="search_data">
+            <input class="searc" type="submit" value="Search" name="search_data_product">
+        </form>
+        </div>
+    </header>
 
     <section class="page-header contact">
       <h2>Let's talk!</h2>

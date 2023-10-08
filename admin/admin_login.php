@@ -15,9 +15,7 @@
             <a href="../about.php">About</a>
             <a href="../products.php">Products</a>
             <a href="../contact.php">Contact</a>
-            <button class="loginBtn">Login</button>
 
-            <label class="cartIcon"><a href="../cart.php"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup></a></label>
         </nav>            
         <div class="search">
             <input type="text" placeholder="Search.." name="search">
