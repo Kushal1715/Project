@@ -84,6 +84,13 @@ session_start();
         <form class="search" action="search_product.php" method="get">
             <input type="search" placeholder="Search.." name="search_data">
             <input class="searc" type="submit" value="Search" name="search_data_product">
+            <?php
+          if(!isset($_SESSION['username'])){
+            echo "";
+          }else{
+            echo "<label class='profile'><a href='user/user_dashboard.php'><i class='fa-regular fa-user'></i></a></label>";
+          }
+          ?>
         </form>
         </div>
     </header>
@@ -176,7 +183,7 @@ session_start();
             Payment Method: <select>
                 <option>Cash on delivery</option>
             </select>
-            <a href="checkout.php" class="proceedBtn" name="checkout">Buy Now</a>
+            <a href="order.php" class="proceedBtn" name="checkout">Order Now</a>
         </div>
     </section>
 

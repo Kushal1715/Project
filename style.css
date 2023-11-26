@@ -116,6 +116,10 @@ header .nav{
     cursor: pointer;
 }
 
+.navbar .profile{
+    margin-top: 7px;
+}
+
 
 
 /* search button  */

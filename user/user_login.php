@@ -63,7 +63,11 @@ include('../functions.php');
         $select_query = "select * from `user` where username= '$username' and user_password = '$password'";
         $result = mysqli_query($conn,$select_query);
         $row_count=mysqli_num_rows($result);
-        if($row_count>0){
+
+        $cart_query = "select * from `cart_details`";
+        $result2 = mysqli_query($conn,$cart_query);
+        $row_count2=mysqli_num_rows($result2);
+        if($row_count>0 && $row_count2== 0){
             echo "<script>alert('Login successfully')</script>";
 
             $_SESSION['username'] = $username;
@@ -71,7 +75,10 @@ include('../functions.php');
 
 
         }else{
-            echo "<script>alert('Invalid Credentials')</script>";
+            $_SESSION['username'] = $username;
+            echo "<script>alert('Login successfully')</script>";
+
+            header ('location:../cart.php');
         }
     }
 ?>
