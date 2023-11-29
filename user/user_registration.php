@@ -80,6 +80,7 @@ if (isset($_POST['user_register'])) {
     $contact = $_POST['contact'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
+    $image = 'user.jpg';
     $user_ip = getIPAddress();
 
     $select_query = "select * from `user` where username='$username' or user_email='$email'";
@@ -90,7 +91,7 @@ if (isset($_POST['user_register'])) {
     }else if($password != $cpassword){
         echo "<script>alert('Password do not match')</script>";
     } else {
-        $insert_query = "insert into `user` (username,user_email,user_password,user_mobile,user_ip) values ('$username','$email','$password','$contact','$user_ip')";
+        $insert_query = "insert into `user` (username,user_email,user_password,user_mobile,user_image,user_ip) values ('$username','$email','$password','$contact','$image','$user_ip')";
         $result2 = mysqli_query($conn, $insert_query);
         if ($result2) {
             echo "<script>alert('Registration completed')</script>";

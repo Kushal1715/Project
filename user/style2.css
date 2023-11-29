@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body{
+    width: 100%;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+}
+
+
+h4{
+    font-size: 20px;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+p{
+    font-size: 16px;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1{
+    padding: 40px 80px;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
+
+
+
+
+/* navbar  */
+
+header{
+    background-color: rgb(178, 8, 0);
+    display: flex;
+    align-items: center;
+}
+
+header .nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 5px;
+}
+
+.logo{
+    padding-left: 20px;
+    font-size: 2em;
+    color: white;
+}
+
+.logo span{
+    color: rgb(0, 255, 219);
+}
+
+.navbar a{
+    position: relative;
+    color: white;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    height: 50px;
+    width: 90px;
+}
+
+/* .navbar a:hover{
+    /* border: 2px solid black; */
+    /* background-color: white; */
+    /* color: black; */
+    /* border-radius: 4px; */
+    /* padding: 5px; */
+ /* */ */
+
+.navbar .loginBtn{
+    border: 2px solid white;
+    padding: 10px 15px;
+}
+
+.navbar .loginBtn a{
+    margin-right: 29px;
+}
+
+/* .navbar .loginBtn:hover{
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    
+} */
+
+.navbar .cartIcon{
+    margin-left: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+/* search button  */
+
+.search{
+    height: 40px;
+    width: 240px;
+    background-color: white;
+    display: flex;
+    border-radius: 5px;
+}
+
+.search input{
+    height: 100%;
+    width: 200px;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    /* padding-right: 0px; */
+}
+
+.search .searc{
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+
+/* ..........footer............  */
+
+footer{
+    border-top: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer h2 .bazar{
+    color: rgb(0, 255, 219);
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow{
+    margin-top: 20px;
+}
+
+footer .follow i{
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img{
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+
+footer .install img{
+    margin: 10px 0 15px 0;
+}
+
+footer .follow i:hover,
+footer .a:hover{
+    color: #088178;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+
+
+@media (max-width: 566px){
+    .banner .banner-box{
+        align-items: center;
+    }
+
+}
+
+
+.profile_img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.edit_img{
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+}

@@ -74,11 +74,13 @@ include('../functions.php');
             header ('location:../home.php');
 
 
-        }else{
+        }else if($row_count>0 && $row_count2> 0){
             $_SESSION['username'] = $username;
             echo "<script>alert('Login successfully')</script>";
 
             header ('location:../cart.php');
+        }else{
+            echo "<script>alert('Invalid username or password')</script>";
         }
     }
 ?>

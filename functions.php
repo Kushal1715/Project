@@ -185,6 +185,32 @@ function newproductDetails(){
 }  
 
 
+//get user order details
+function order_details(){
+    global $conn;
+    $username = $_SESSION['username'];
+    $get_details = "select * from `user` where username = '$username'";
+    $result_query = mysqli_query($conn,$get_details);
+    while($row= mysqli_fetch_assoc($result_query)){
+        $user_id = $row["user_id"];
+        if(!isset($_GET['edit_account'])){
+            if(!isset($_GET['my_orders'])){
+                if(!isset($_GET['delect_account'])){
+                    $get_orders = "select * from `user_orders` where user_id=$user_id and order_status='pending'";
+    $result_orders_query = mysqli_query($conn,$get_orders);
+    $row_count = mysqli_num_rows($result_orders_query);
+    if($row_count > 0){
+            echo "<h3 class='text-center'>You have <span class='text-danger'>$row_count</span> pending orders</h3>
+            <p class='text-center'><a href='user_dashboard.php?my_orders' class='text-dark'>Order Details</a></p>";
+        }else{
+            echo "<h3 class='text-center'>You have 0 pending orders</h3>
+            <p class='text-center'><a href='../products.php' class='text-dark'>Explore products</a></p>";
+        }
+    }
+}
+}
+}
+}
 ?> 
 
 
