@@ -22,7 +22,7 @@ if(isset($_POST['confirm_payment'])){
     ($order_id,$invoice_number,$amount,'$location','$payment_mode')";
     $result = mysqli_query($conn,$insert_query);
     if($result){
-        echo "<script>alert('Successfully completed the payment')</script>";
+        echo "<script>alert('Successfully completed the order')</script>";
         echo "<script>window.open('user_dashboard.php?my_orders','_self')</script>";
     }
 

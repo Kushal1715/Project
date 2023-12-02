@@ -111,7 +111,7 @@ include "../functions.php";
                     </a>
                 </li>
                 <li class="nav-item bg-info">
-                    <a href="user_dashboard.php?delete_account" class="nav-link text-light">
+                    <a href="user_dashboard.php?change_password" class="nav-link text-light">
                         Change Password
                     </a>
                 </li>
@@ -130,6 +130,9 @@ include "../functions.php";
         }
         if(isset($_GET['my_orders'])){
             include('user_orders.php');
+        }
+        if(isset($_GET['change_password'])){
+            include('change_password.php');
         }
         ?>
         </div>
