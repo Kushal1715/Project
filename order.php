@@ -26,25 +26,32 @@ if (isset($_SESSION['username'])) {
 
         // orders pending
 
-    $insert_pending_orders = "Insert into `orders_pending` (user_id,invoice_number,product_id,quantity,order_status) 
+        $insert_pending_orders = "Insert into `orders_pending` (user_id,invoice_number,product_id,quantity,order_status) 
     values ($user_id,$invoice_number,$product_id,$quan,'$status')";
-$result_pending_query = mysqli_query($conn, $insert_pending_orders);
-    }
+        $result_pending_query = mysqli_query($conn, $insert_pending_orders);
 
-    $insert_orders = "Insert into `user_orders` (user_id,amount_due,invoice_number,total_products,order_date,order_status) 
-                    values ($user_id,$total_price,$invoice_number,$count_products,NOW(),'$status')";
-    $result_query = mysqli_query($conn, $insert_orders);
-    if ($result_query) {
-        echo "<script>alert('Orders are submitted successfully')</script>";
-        echo "<script>window.open('user/user_dashboard.php','_self')</script>";
-    }
 
+    }
     
-
+    $cart_query_price2 = "select * from `cart_details` where ip_address='$user_ip'";
+    $result_cart_price2 = mysqli_query($conn, $cart_query_price2);
+    $cart_number = mysqli_num_rows($result_cart_price2);
+    if ($cart_number > 0) {
+        $insert_orders = "Insert into `user_orders` (user_id,amount_due,invoice_number,total_products,order_date,order_status) 
+                    values ($user_id,$total_price,$invoice_number,$count_products,NOW(),'$status')";
+        $result_query = mysqli_query($conn, $insert_orders);
+        if ($result_query) {
+            echo "<script>alert('Orders are submitted successfully')</script>";
+            echo "<script>window.open('user/user_dashboard.php','_self')</script>";
+        }
+    } else {
+        echo "<script>alert('Place items in the cart to order')</script>";
+        echo "<script>window.open('products.php','_self')</script>";
+    }
     // delete items from cart
     $empty_cart = "Delete from `cart_details` where
                     ip_address = '$user_ip'";
-                    $result_delete = mysqli_query($conn, $empty_cart);
+    $result_delete = mysqli_query($conn, $empty_cart);
 
 } else {
     header("Location:user/user_login.php");
