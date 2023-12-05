@@ -53,12 +53,7 @@ h1{
     font-size: 1.2em;
 }
 
-.side-bar li{
-    font-size: 24px;
-    padding: 10px 40px;
-    display: flex;
-    align-items: center;
-}
+
 
 .side-bar li button{
     padding: 10px;

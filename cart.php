@@ -55,7 +55,16 @@ session_start();
 .cart table td{
     border: 1px solid black;
 }
-        </style>
+
+.proceedBtn{
+    text-decoration: none;
+    padding: 12px 250px;
+}
+
+.proceedBtn:hover{
+    text-decoration: underline;
+}
+    </style>
 </head>
 
 <body>
@@ -180,9 +189,9 @@ session_start();
                         </strong></td>
                 </tr>
             </table>
-            Payment Method: <select>
+            <!-- Payment Method: <select>
                 <option>Cash on delivery</option>
-            </select>
+            </select> -->
             <a href="order.php" class="proceedBtn" name="checkout">Order Now</a>
         </div>
     </section>

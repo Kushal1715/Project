@@ -2,7 +2,7 @@
 session_start();
 
 include "../connect.php";
-
+include "../functions.php";
 if(isset($_GET['order_id'])){
     $order_id=$_GET['order_id'];
     $select_data = "select * from `user_orders` where order_id=$order_id";
@@ -13,7 +13,16 @@ if(isset($_GET['order_id'])){
 
 }
 
+$get_ip = getIPAddress();
+
 if(isset($_POST['confirm_payment'])){
+
+$select_email = "select * from `user` where user_ip = '$get_ip'";
+$result_mail = mysqli_query($conn,$select_email);
+$row_fetch2 = mysqli_fetch_array($result_mail);
+$email = $row_fetch2['user_email'];
+
+
     $invoice_number = $_POST['invoice_number'];
     $amount=$_POST['amount'];
     $location=$_POST['location'];
@@ -29,6 +38,8 @@ if(isset($_POST['confirm_payment'])){
     $update_orders = "update `user_orders` set order_status='Complete' where order_id = $order_id";
     $result_orders = mysqli_query($conn,$update_orders);
 
+    $update_orders_pending = "update `orders_pending` set order_status='Complete' where invoice_number = $invoice_number";
+    $result_orders_pending = mysqli_query($conn,$update_orders_pending);
 }
 
 ?>
@@ -70,7 +81,7 @@ if(isset($_POST['confirm_payment'])){
             </div>
             <div class="form-outline my-4 text-center w-50 m-auto">
             <label for="" class="label text-light">Location:</label>
-                <input type="text" class="form-control w-50 m-auto" name="location">
+                <input type="text" class="form-control w-50 m-auto" name="location" required>
             </div>
             <div class="form-outline my-4 text-center w-50 m-auto">
                 <select name="payment_mode" class=" w-60 select">
