@@ -3,8 +3,9 @@ include "connect.php";
 include "functions.php";
 session_start();
 if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
     $user_ip = getIPAddress();
-    $get_user = "Select * from `user` where user_ip='$user_ip'";
+    $get_user = "Select * from `user` where username='$username'";
     $result = mysqli_query($conn, $get_user);
     $run_query = mysqli_fetch_array($result);
     $user_id = $run_query["user_id"];

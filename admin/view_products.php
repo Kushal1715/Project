@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,8 +51,8 @@
 
                 ?>
             </td>
-            <td><a href='admin_panel.php?edit_products' class='text-light'><i class='fa-solid fa-pen-to-square'></i></a></td>
-            <td><a href='' class='text-light'><i class='fa-solid fa-trash'></i></a></td>
+            <td><a href='admin_panel.php?edit_products=<?php echo $product_id ?>' class='text-light'><i class='fa-solid fa-pen-to-square'></i></a></td>
+            <td><a href='admin_panel.php?delete_products=<?php echo $product_id ?>' class='text-light'><i class='fa-solid fa-trash'></i></a></td>
         </tr>
             <?php
         }
@@ -86,8 +87,8 @@
 
                 ?>
             </td>
-            <td><a href='' class='text-light'><i class='fa-solid fa-pen-to-square'></i></a></td>
-            <td><a href='' class='text-light'><i class='fa-solid fa-trash'></i></a></td>
+            <td><a href='admin_panel.php?edit_products2=<?php echo $product_id ?>' class='text-light'><i class='fa-solid fa-pen-to-square'></i></a></td>
+            <td><a href='admin_panel.php?delete_products2=<?php echo $product_id ?>' class='text-light'><i class='fa-solid fa-trash'></i></a></td>
         </tr>
             <?php
         }

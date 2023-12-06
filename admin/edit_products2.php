@@ -1,8 +1,8 @@
 <?php
-    if(isset($_GET['edit_products'])){
-        $edit_id = $_GET['edit_products'];
+    if(isset($_GET['edit_products2'])){
+        $edit_id = $_GET['edit_products2'];
         
-        $get_data = "Select * from `product` where product_id=$edit_id";
+        $get_data = "Select * from `new_products` where product_id=$edit_id";
         $result = mysqli_query($conn,$get_data);
         $row = mysqli_fetch_array($result);
         $product_title = $row['product_title']; 
@@ -39,13 +39,13 @@
             <input type="text" value="<?php echo $product_price ?>" id="product_price" name="product_price" class="form-control mb-4" required="required">
         </div>
         <div class="text-center">
-            <input type="submit" name="edit_product" value="Update Product" class="btn btn-secondary px-3 mb-3">
+            <input type="submit" name="edit_product2" value="Update Product" class="btn btn-secondary px-3 mb-3">
         </div>
 </form>
 </div>
 
 <?php
-if(isset($_POST['edit_product'])){
+if(isset($_POST['edit_product2'])){
     $product_title = $_POST['product_title'];
     $product_description = $_POST['product_desc'];
     $product_keyword = $_POST['product_keyword'];
@@ -58,13 +58,13 @@ if(isset($_POST['edit_product'])){
 
     move_uploaded_file($product_image_tmp,"../img/products/$product_image");
 
-    
         
 
-        $update_products = "update `product` set product_title='$product_title', product_description='$product_description', product_keyword='$product_keyword', product_image='$product_image' , product_price = '$product_price', date=NOW() where product_id=$edit_id";
+        $update_products = "update `new_products` set product_title='$product_title', product_description='$product_description', product_keyword='$product_keyword', product_image='$product_image' , product_price = '$product_price', date=NOW() where product_id=$edit_id";
         $result_update = mysqli_query($conn,$update_products);
         if($result_update){
             echo "<script>alert('Product updated successfully')</script>";
             echo "<script>window.open('admin_panel.php?view_products','_self')</script>";
         }
     }
+
