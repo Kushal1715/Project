@@ -60,28 +60,39 @@ include('../functions.php');
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $select_query = "select * from `user` where username= '$username' and user_password = '$password'";
+        $select_query = "select * from `user` where username= '$username'";
         $result = mysqli_query($conn,$select_query);
         $row_count=mysqli_num_rows($result);
 
         $cart_query = "select * from `cart_details`";
         $result2 = mysqli_query($conn,$cart_query);
         $row_count2=mysqli_num_rows($result2);
-        if($row_count>0 && $row_count2== 0){
-            echo "<script>alert('Login successfully')</script>";
 
-            $_SESSION['username'] = $username;
-            header ('location:../home.php');
-
-
-        }else if($row_count>0 && $row_count2> 0){
-            $_SESSION['username'] = $username;
-            echo "<script>alert('Login successfully')</script>";
-
-            header ('location:../cart.php');
+        if($user_data = mysqli_fetch_array($result)){
+            $en_password = $user_data['user_password'];
+            if(md5($en_password== $password)){
+                if($row_count>0 && $row_count2== 0){
+                    echo "<script>alert('Login successfully')</script>";
+        
+                    $_SESSION['username'] = $username;
+                    header ('location:../home.php');
+        
+        
+                }else if($row_count>0 && $row_count2> 0){
+                    $_SESSION['username'] = $username;
+                    echo "<script>alert('Login successfully')</script>";
+        
+                    header ('location:../cart.php');
+                }
+            }
         }else{
             echo "<script>alert('Invalid username or password')</script>";
         }
+        
+
+        
+        
+        
     }
 ?>
 

@@ -30,6 +30,10 @@ include "../functions.php";
     height: 100px;
     object-fit: contain;
 }
+
+.order-details{
+    text-decoration: underline;
+}
     </style>
 
 </head>

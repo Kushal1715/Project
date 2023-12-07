@@ -38,8 +38,8 @@ object-fit: contain;
         <ul>
             <li><button><a href="insert_products.php">Insert Products</a></button></li>
             <li><button><a href="admin_panel.php?view_products">View Products</a></button></li>
-            <li><button><a href="admin_panel.php?all_orders">All Orders</a></button></li>
-            <li><button><a href="admin_panel.php?all_payments">All Payments</a></button></li>
+            <li><button><a href="admin_panel.php?list_orders">All Orders</a></button></li>
+            <li><button><a href="admin_panel.php?list_payments">All Payments</a></button></li>
             <li><button><a href="admin_panel.php?list_users">List Users</a></button></li>
         </ul>
     </div>
@@ -71,6 +71,25 @@ object-fit: contain;
             if(isset($_GET['delete_products2'])){
                 include "delete_products2.php";
             }
+            if(isset($_GET['list_orders'])){
+                include "list_orders.php";
+            }
+            if(isset($_GET['delete_orders'])){
+                include "delete_orders.php";
+            }
+            if(isset($_GET['list_payments'])){
+                include "list_payments.php";
+            }
+            if(isset($_GET['delete_payments'])){
+                include "delete_payments.php";
+            }
+            if(isset($_GET['list_users'])){
+                include "list_users.php";
+            }
+            if(isset($_GET['delete_users'])){
+                include "delete_users.php";
+            }
+
             ?>
          
         </div>

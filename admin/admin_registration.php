@@ -1,3 +1,7 @@
+<?php
+include('../connect.php');
+include('../functions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,36 +30,37 @@
     <div class="box">
         <div class="loginForm">
             <h2>Admin Registration</h2>
-            <form action="#">
-            <div class="inputBox">
-                    <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" required>
-                    <label>Full Name</label>
-                </div>
+            <form action="" method="post">
+
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" required>
-                    <label>Username</label>
+                    <input type="text" required name="username" id="username" autocomplete="off">
+                    <label for="username">Username</label>
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <input type="email" required name="email" id="email" autocomplete="off">
+                    <label for="email">Email</label>
+                </div>
+                <div class="inputBox">
+                    <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                    <input type="text" required name="contact" id="contact" autocomplete="off">
+                    <label for="contact">Phone Number</label>
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required>
-                    <label>Password</label>
+                    <input type="password" required name="password" id="password">
+                    <label for="password">Password</label>
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                    <input type="password" required>
-                    <label>Confirm Password</label>
+                    <input type="password" required name="cpassword" id="cpassword">
+                    <label for="cpassword">Confirm Password</label>
                 </div>
                 <div class="rememberMe">
                     <label><input type="checkbox" required>I accept the <a href="#">terms and conditions</a></label>
                 </div>
-                <button type="submit" class="loginBtn">Register</button>
+                <button type="submit" class="loginBtn" name="admin_register">Register</button>
                 <div class="registerAccount">
                     <p>Already have an account?<a href="admin_login.php">Login</a></p>
                 </div>
@@ -65,3 +70,37 @@
     <!-- <script src="script.js"></script> -->
 </body>
 </html>
+<?php
+if (isset($_POST['admin_register'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $contact = $_POST['contact'];
+    $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
+    $pw = strlen($password);
+    $en_password = md5($password);
+
+    $select_query = "select * from `admin` where username='$username' or admin_email='$email'";
+    $result = mysqli_query($conn, $select_query);
+    $rows_count = mysqli_num_rows($result);
+    if ($rows_count > 0) {
+        echo "<script>alert('Username or email already exist')</script>";
+    }else if($pw < 8){
+        echo "<script>alert('Password Must Contain At Least 8 Characters!')</script>";
+    }else if($password != $cpassword){
+        echo "<script>alert('Password do not match')</script>";
+    } else {
+        $insert_query = "insert into `admin` (username,admin_email,admin_password,admin_mobile) values ('$username','$email','$en_password','$contact')";
+        $result2 = mysqli_query($conn, $insert_query);
+        if ($result2) {
+            echo "<script>alert('Registration completed')</script>";
+            echo "<script>window.open('admin_login.php','_self')</script>";
+
+        } else {
+            echo "<script>alert('Registration failed')</script>";
+        }
+    }
+
+
+}
+?>

@@ -64,13 +64,13 @@ session_start();
 
         <div class="people">
             <div>
-                <img src="img/rahul2.jpg">
+                <img src="img/user_img/rahul2.jpg">
                 <p><span>Rahul Shrestha</span> Owner 
                 <br> Email: rahul@gmail.com
                 </p>
             </div>
             <div>
-                <img src="img/kushal.jpg">
+                <img src="img/user_img/kushal.jpg">
                 <p><span>Kushal Khadka</span> Owner 
                 <br> Email: kushal@gmail.com
                 </p>

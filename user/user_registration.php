@@ -47,7 +47,7 @@ include('../functions.php');
                 </div>
                 <div class="inputBox">
                     <span class="icon"><i class="fa-solid fa-phone"></i></span>
-                    <input type="number" required name="contact" id="contact" autocomplete="off">
+                    <input type="text" required name="contact" id="contact" autocomplete="off">
                     <label for="contact">Phone Number</label>
                 </div>
                 <div class="inputBox">
@@ -82,19 +82,25 @@ if (isset($_POST['user_register'])) {
     $cpassword = $_POST['cpassword'];
     $image = 'user.jpg';
     $user_ip = getIPAddress();
+    $pw = strlen($password);
+    $en_password = md5($password);
 
     $select_query = "select * from `user` where username='$username' or user_email='$email'";
     $result = mysqli_query($conn, $select_query);
     $rows_count = mysqli_num_rows($result);
     if ($rows_count > 0) {
         echo "<script>alert('Username or email already exist')</script>";
+    }else if($pw < 8){
+        echo "<script>alert('Password Must Contain At Least 8 Characters!')</script>";
     }else if($password != $cpassword){
         echo "<script>alert('Password do not match')</script>";
     } else {
-        $insert_query = "insert into `user` (username,user_email,user_password,user_mobile,user_image,user_ip) values ('$username','$email','$password','$contact','$image','$user_ip')";
+        $insert_query = "insert into `user` (username,user_email,user_password,user_mobile,user_image,user_ip) values ('$username','$email','$en_password','$contact','$image','$user_ip')";
         $result2 = mysqli_query($conn, $insert_query);
         if ($result2) {
             echo "<script>alert('Registration completed')</script>";
+            echo "<script>window.open('user_login.php','_self')</script>";
+
         } else {
             echo "<script>alert('Registration failed')</script>";
         }

@@ -19,7 +19,7 @@ if(isset($_GET['edit_account'])){
     move_uploaded_file($user_image_tmp,"../img/user_img/$user_image");
 
     //update query
-    $update_data="update `user` set username='$user_name',user_email='$user_email', user_mobile='$user_mobile', user_image='$user_image' where user_id=$update_id";
+    $update_data="update `user` set username='$user_name',user_email='$user_email', user_mobile=$user_mobile, user_image='$user_image' where user_id=$update_id";
     $result=mysqli_query($conn,$update_data);
     if($result){
         echo "<script>alert('Data updated successfully')</script>";

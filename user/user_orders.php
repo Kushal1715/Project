@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .confirm{
+        text-decoration: underline;
+    }
+</style>
 <body>
     <?php
     $username = $_SESSION['username'];
@@ -26,6 +31,7 @@
         <th>Click to Confirm</th>
     </tr>
     </thead>
+    
     <tbody class='bg-secondary text-light'>
         <?php
         $get_order_details="select * from `user_orders` where user_id = $user_id";
@@ -57,7 +63,7 @@
             if($order_status == 'Complete'){
                 echo "<td>Paid</td>";
             }else{
-                echo "<td><a href='confirm_payment.php?order_id=$order_id' class='text-light'>Confirm</a></td>
+                echo "<td><a href='confirm_payment.php?order_id=$order_id' class='text-light confirm'>Confirm</a></td>
         </tr>";
 
             }
