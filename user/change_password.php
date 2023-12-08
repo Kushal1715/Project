@@ -7,24 +7,28 @@ if(isset($_GET['change_password'])){
     $user_id = $row_fetch["user_id"];
 
     $user_password = $row_fetch["user_password"];
+    $pass = md5($user_password);
 }
     if(isset($_POST['user_update'])){
         $update_id=$user_id;
-        $old_password = $_POST["old_password"];
+        // $old_passwor = $_POST["old_password"];
+        // $old_password = md5($old_passwor);
 
         
     $new_password = $_POST["new_password"];
     $new_password2 = $_POST["new_password2"];
 
     
-    
+    $new_password = md5($new_password);
+    $new_password2 = md5($new_password2);
 
 
     //update query
     $update_data="update `user` set user_password='$new_password' where user_id=$update_id";
-    if($old_password != $user_password){
-        echo "<script>alert('Invalid old password')</script>";
-    }else if($new_password != $new_password2){
+    // if(($old_password != $pass)){
+    //     echo "<script>alert('Invalid old password')</script>";
+    // }else 
+    if($new_password != $new_password2){
         echo "<script>alert('Password do not match')</script>";
     }else{
     $result=mysqli_query($conn,$update_data);

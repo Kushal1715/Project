@@ -10,19 +10,16 @@ if(isset($_GET['order_id'])){
     $row_fetch = mysqli_fetch_array($result);
     $invoice_number = $row_fetch["invoice_number"];
     $amount_due= $row_fetch["amount_due"];
+    $user_id = $row_fetch["user_id"];
 
 }
 
-$get_ip = getIPAddress();
 
 if(isset($_POST['confirm_payment'])){
 
-$select_email = "select * from `user` where user_ip = '$get_ip'";
-$result_mail = mysqli_query($conn,$select_email);
-$row_fetch2 = mysqli_fetch_array($result_mail);
-$email = $row_fetch2['user_email'];
 
 
+    $user = $_POST['user_id'];
     $invoice_number = $_POST['invoice_number'];
     $amount=$_POST['amount'];
     $location=$_POST['location'];
@@ -31,7 +28,7 @@ $email = $row_fetch2['user_email'];
     ($order_id,$invoice_number,$amount,'$location','$payment_mode')";
     $result = mysqli_query($conn,$insert_query);
     if($result){
-        echo "<script>alert('Successfully completed the order')</script>";
+        echo "<script>alert('Successfully completed the order.Please check your mail for more details.')</script>";
         echo "<script>window.open('user_dashboard.php?my_orders','_self')</script>";
     }
 
@@ -40,6 +37,18 @@ $email = $row_fetch2['user_email'];
 
     $update_orders_pending = "update `orders_pending` set order_status='Complete' where invoice_number = $invoice_number";
     $result_orders_pending = mysqli_query($conn,$update_orders_pending);
+
+
+    $select_email = "select * from `user` where user_id = $user";
+$result_mail = mysqli_query($conn,$select_email);
+$row_fetch2 = mysqli_fetch_array($result_mail);
+$email = $row_fetch2['user_email'];
+    $to = $email;
+    $subject = 'Order Successful';
+    $message = "Dear customer,\nYour order will be delivered within 4 to 5 days. \nThank you for shopping with us!\n For more information please contact 012345678\n-Digital Bazar";
+    $headers = "From: digitalBazar@gmail.com\r\nReply-To: user@gmail.com";
+    $mail_sent = mail($to,$subject,$message,$headers);
+    
 }
 
 ?>
@@ -83,6 +92,8 @@ $email = $row_fetch2['user_email'];
             <label for="" class="label text-light">Location:</label>
                 <input type="text" class="form-control w-50 m-auto" name="location" required>
             </div>
+            <input type="hidden"  name="user_id" value="<?php echo $user_id ?>">
+
             <div class="form-outline my-4 text-center w-50 m-auto">
                 <select name="payment_mode" class=" w-60 select">
                     <option>Select Payment Mode</option>

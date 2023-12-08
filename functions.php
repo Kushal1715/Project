@@ -33,7 +33,6 @@ function productDetails()
                         <input type='hidden' name='product_name' value='$product_title'>
                         <input type='hidden' name='product_price' value='$product_price'>
                         <input type='hidden' name='product_image' value='$product_image'>
-                        <input type='number' value='1' />
                         <a><button type='submit' name='add_to_cart'>Add To Cart</button></a>
                         <h4>Product Description</h4>
                         <span id='productDescription'
@@ -76,7 +75,6 @@ function newproductDetails()
                         <input type='hidden' name='product_name' value='$product_title'>
                         <input type='hidden' name='product_price' value='$product_price'>
                         <input type='hidden' name='product_image' value='$product_image'>
-                        <input type='number' value='1' />
                         <a><button type='submit' name='add_to_cart'>Add To Cart</button></a>
                         <h4>Product Description</h4>
                         <span id='productDescription'

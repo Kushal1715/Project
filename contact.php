@@ -1,4 +1,8 @@
 <?php
+
+include('connect.php');
+include('functions.php');
+
 session_start();
 
 
@@ -52,14 +56,14 @@ session_start();
     </section>
 
     <section class="formDetails">
-        <form action="">
+        <form action="" method="post">
             <span>LEAVE A MESSAGE</span>
             <h2>We love to hear form you</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <button>Submit</button>
+            <input type="text" placeholder="Your Name" name="name">
+            <input type="text" placeholder="Email" name = "email">
+            <input type="text" placeholder="Subject" name="subject">
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <button type="submit" name="contact_us">Submit</button>
         </form>
 
         <div class="people">
@@ -85,3 +89,22 @@ session_start();
     <script src="script.js"></script>
   </body>
 </html>
+<?php
+if(isset($_POST['contact_us'])){
+
+  
+  
+  
+      $name = $_POST['name'];
+      $email=$_POST['email'];
+      $subject=$_POST['subject'];
+      $message=$_POST['message'];
+      
+  
+      $to = "kushalkhadka77@gmail.com";
+      
+      $headers = "From: user@gmail.com\r\nReply-To: digitalBazar@gmail.com";
+      $mail_sent = mail($to,$subject,$message,$headers);
+      
+  }
+?>
