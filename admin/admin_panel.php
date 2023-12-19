@@ -1,6 +1,12 @@
 <?php
+session_start();
+
 include "../connect.php";
 include "../functions.php";
+if(!isset($_SESSION['admin_username'])){
+    header("Location: error.php");
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +57,7 @@ object-fit: contain;
                 <button type="submit"><i class="fa fa-search"></i></button>
             </div>        
             <div class="user">
-                <a href="admin_login.php" class="btn">Logout</a>
+                <a href="error.php" class="btn" name='logout'>Logout</a>
             </div>
         </div>
         <div class="content">

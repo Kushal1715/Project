@@ -1,7 +1,7 @@
 <?php
 include('../connect.php');
 include('../functions.php');
-// @session_start();
+@session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +70,7 @@ include('../functions.php');
             if(md5($en_password== $password)){
                 if($row_count>0){
                     echo "<script>alert('Login successfully')</script>";
-        
+                    $_SESSION['admin_username'] = $username;
                     // $_SESSION['username'] = $username;
                     header ('location:admin_panel.php');
         
